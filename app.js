@@ -30,29 +30,25 @@ function handleGuess(guess) {
 }
 
 // Hiding Spots Component
-const shedButton = document.getElementById('shed-button');
-const treeButton = document.getElementById('tree-button');
-const boulderButton = document.getElementById('boulder-button');
+const spotElements = new Map();
+spotElements.set('tree', document.getElementById('shed-button'));
+spotElements.set('shed', document.getElementById('tree-button'));
+spotElements.set('boulder', document.getElementById('boulder-button'));
 
 function resetClasses() {
     // reset face and guess classes
-    treeButton.classList.remove('face', 'guessed');
-    shedButton.classList.remove('face', 'guessed');
-    boulderButton.classList.remove('face', 'guessed');
+    spotElements.forEach(element => {
+        element.classList.remove('face', 'guessed');
+    });
 }
-
-const spotToElementMap = new Map();
-spotToElementMap.set('tree', treeButton);
-spotToElementMap.set('shed', shedButton);
-spotToElementMap.set('boulder', boulderButton);
 
 function displayHidingSpots() {
     // clear existing classes
     resetClasses();
 
     // add face and guessed classes where appropriate
-    spotToElementMap.get(spot)?.classList.add('face');
-    spotToElementMap.get(guessed)?.classList.add('guessed');
+    spotElements.get(spot)?.classList.add('face');
+    spotElements.get(guessed)?.classList.add('guessed');
 
     // Clear the face and guessed classes after two seconds
     // store the timeout so we can clear if user makes
@@ -60,18 +56,11 @@ function displayHidingSpots() {
     timeout = setTimeout(resetClasses, 2000);
 }
 
-treeButton.addEventListener('click', () => {
-    handleGuess('tree');
-});
-
-boulderButton.addEventListener('click', () => {
-    handleGuess('boulder');
-});
-
-shedButton.addEventListener('click', () => {
-    handleGuess('shed');
-});
-
+for (const [k, v] of spotElements) {
+    v.addEventListener('click', () => {
+        handleGuess(k);
+    });
+}
 
 // Results Component
 const winsDisplay = document.getElementById('wins-display');
