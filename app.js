@@ -56,12 +56,18 @@ function displayHidingSpots() {
         boulderButton.classList.add('face');
     }
 
-    // *** Implement adding the guessed ***
-    // Similar to adding face class, conditionally
-    // add the 'guessed' class if the guessed state
-    // matches for tree, shed, or boulder
-    // ***
-
+    // add guessed class
+    switch (guessed) {
+        case 'tree':
+            treeButton.classList.add('guessed');
+            break;
+        case 'shed':
+            shedButton.classList.add('guessed');
+            break;
+        case 'boulder':
+            boulderButton.classList.add('guessed');
+            break;
+    }
 
     // Clear the face and guessed classes after two seconds
     // store the timeout so we can clear if user makes
