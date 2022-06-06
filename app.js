@@ -41,33 +41,19 @@ function resetClasses() {
     boulderButton.classList.remove('face', 'guessed');
 }
 
+const spotToElementMap = {
+    tree: treeButton,
+    shed: shedButton,
+    boulder: boulderButton,
+};
+
 function displayHidingSpots() {
     // clear existing classes
     resetClasses();
 
     // add face class
-    if (spot === 'tree') {
-        treeButton.classList.add('face');
-    }
-    if (spot === 'shed') {
-        shedButton.classList.add('face');
-    }
-    if (spot === 'boulder') {
-        boulderButton.classList.add('face');
-    }
-
-    // add guessed class
-    switch (guessed) {
-        case 'tree':
-            treeButton.classList.add('guessed');
-            break;
-        case 'shed':
-            shedButton.classList.add('guessed');
-            break;
-        case 'boulder':
-            boulderButton.classList.add('guessed');
-            break;
-    }
+    spotToElementMap[spot].classList.add('face');
+    spotToElementMap[guessed].classList.add('guessed');
 
     // Clear the face and guessed classes after two seconds
     // store the timeout so we can clear if user makes
