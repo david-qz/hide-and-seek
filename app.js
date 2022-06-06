@@ -51,8 +51,8 @@ function displayHidingSpots() {
     resetClasses();
 
     // add face class
-    spotToElementMap.get(spot).classList.add('face');
-    spotToElementMap.get(guessed).classList.add('guessed');
+    spotToElementMap.get(spot)?.classList.add('face');
+    spotToElementMap.get(guessed)?.classList.add('guessed');
 
     // Clear the face and guessed classes after two seconds
     // store the timeout so we can clear if user makes
