@@ -50,7 +50,7 @@ function displayHidingSpots() {
     // clear existing classes
     resetClasses();
 
-    // add face class
+    // add face and guessed classes where appropriate
     spotToElementMap.get(spot)?.classList.add('face');
     spotToElementMap.get(guessed)?.classList.add('guessed');
 
