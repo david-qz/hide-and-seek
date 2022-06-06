@@ -89,6 +89,9 @@ shedButton.addEventListener('click', () => {
 
 
 // Results Component
+const winsDisplay = document.getElementById('wins-display');
+const lossesDisplay = document.getElementById('losses-display');
+const totalDisplay = document.getElementById('total-display');
 
 // *** Implement the Results Component! ***
 // 1. Reference needed DOM elements
@@ -97,7 +100,9 @@ shedButton.addEventListener('click', () => {
 //    (derive losses from totals and wins)
 // ***
 function displayResults() {
-
+    winsDisplay.textContent = wins;
+    lossesDisplay.textContent = total - wins;
+    totalDisplay.textContent = total;
 }
 
 
