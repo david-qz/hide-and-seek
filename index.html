@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" type="image/x-icon" href="/assets/alchemy-favicon.png" />
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/home.css" />
+    <title>HIDE &amp; SEEK</title>
+</head>
+
+<body>
+    <header>
+        <img src="assets/html_css_js.png">
+        <h1>HIDE &amp; SEEK</h1>
+    </header>
+
+    <main>
+        <h2>Guess where I'm hiding!</h2>
+
+        <section id="hiding-places">
+            <button class="hiding-spot" id="tree-button">
+                <img src="./assets/tree.png">
+                Tree
+            </button>
+
+            <button class="hiding-spot" id="shed-button">
+                <img src="./assets/shed.png">
+                Shed
+            </button>
+
+            <button class="hiding-spot" id="boulder-button">
+                <img src="./assets/boulder.png">
+                Boulder
+            </button>
+
+        </section>
+
+        <section id="results">
+            <p>
+                You guessed correctly <span id="wins-display">0</span> times
+                and incorrectly <span id="losses-display">0</span> times
+                out of <span id="total-display">0</span> games.
+            </p>
+        </section>
+    </main>
+
+    <footer>&copy;2021 Aspiring Software Developer</footer>
+
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>

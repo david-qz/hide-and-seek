@@ -1,0 +1,51 @@
+
+
+#hiding-places {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.hiding-spot {
+    padding: 15px;
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    background: transparent;
+    border: 0;
+    font-size: 1.2em;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.hiding-spot:hover:not(.guessed) {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.guessed {
+    background: rgba(255, 0, 0, 0.1)
+}
+
+.guessed.face {
+    background: rgba(0, 128, 0, 0.1);
+}
+
+
+.hiding-spot img {
+    height: 175px;
+    width: 175px;
+    object-fit: contain;
+}
+
+#results {
+    margin-top: 20px;
+    max-width: 600px;
+}
+
+.face::after {
+    font-size: 8rem;
+    content: '😃';
+    position: absolute;
+}
